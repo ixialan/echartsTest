@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!-- 给用户实体映射类起个别名，在SQL映射配置文件里方便使用 -->
+		<typeAlias alias="diagramEntity" type="com.tecsoon.www.dao.entity.DiagramEntity" />
+		<typeAlias alias="navigateEntity" type="com.tecsoon.www.dao.entity.NavigateEntity" />
+		<typeAlias alias="connectorEntity" type="com.tecsoon.www.dao.entity.ConnectorEntity" />
+		<typeAlias alias="chartSettingEntity" type="com.tecsoon.www.dao.entity.ChartSettingEntity" />
+		<typeAlias alias="chartSettingParam" type="com.tecsoon.www.dao.entity.ChartSettingParam" />
+		<typeAlias alias="uviewEntity" type="com.tecsoon.www.dao.entity.UviewEntity" />
+		<typeAlias alias="userEntity" type="com.tecsoon.www.dao.entity.SysUserEntity" />
+		<typeAlias alias="showInfoEntity" type="com.tecsoon.www.dao.entity.ShowInfoEntity" />
+		<typeAlias alias="randomEntity" type="com.tecsoon.www.dao.entity.RandomEntity" />
+	</typeAliases>
+</configuration>

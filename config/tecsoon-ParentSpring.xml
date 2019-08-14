@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/jdbc
+     http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd">
+     
+  	<!-- 自动扫描注入 注解 扫描com.tecsoon目录下所有文件 -->
+	<!-- @Repository：数据访问层组件，@Service：业务层组件，@Controller：控制层组件，spring根据注解不同的注解会进行不同的操作-->
+	<context:component-scan base-package="com.tecsoon"/>
+  	
+  	<!-- 引入子spring配置文件 "com.chachaba.user.application_user" -->
+    <import resource="user-ChildSpring.xml" />
+    <!-- <import resource="user1-ChildSpring.xml" /> -->
+    <!-- <import resource="user2-ChildSpring.xml" /> -->
+      	
+</beans>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="tecsoon" extends="tecsoonPkg">
+		
+		<!-- <action name="LoginAction" class="bigdata-loginAction" method="execute">
+			<result name="success" type="redirect">UserInfoAction</result>
+		</action>
+		<action name="UserInfoAction" class="tecsoon-userinfo" method="execute">
+			<result name="success">/jsp/userinfo.jsp</result>
+			<result name="input">/jsp/error.jsp</result>
+		</action> -->
+		
+		<action name="IndexAction2" class="IndexAction2" method="execute">
+			<result name="success">/jsp/userinfo.jsp</result>
+			<result name="input">/jsp/error.jsp</result>
+		</action>
+		
+		<action name="TestAjaxAction" class="tecsoon-testajax" method="execute">
+			<result name="success">/jsp/testajax.jsp</result>
+			<result name="input">/jsp/error.jsp</result>
+		</action>
+		
+		<action name="WeAction" class="WeAction" method="execute">
+			<result name="success">/jsp/testajax.jsp</result>
+			<result name="input">/jsp/error.jsp</result>
+		</action>
+		<action name="UviewAction" class="com.tecsoon.www.action.Arch_busi_uviewAction" method="execute">
+			<result name="uviewList"  type="json">/jsp/arch.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		 
+		
+		
+		
+		<action name="IndexAction" class="com.tecsoon.www.action.IndexAction" method="execute">
+			<result name="success">/jsp/New.jsp</result>
+			<result name="input">/jsp/error.jsp</result>
+		</action>
+		
+		<action name="NewAction" class="tecsoon-ttt" method="execute">
+			<result name="success">/jsp/userinfo.jsp</result>
+			<result name="input">/jsp/error.jsp</result>
+		</action>
+		
+		<!-- 返回JSON类型数据 -->
+		<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+		<action name="EchartsTest1_1Action_ajaxQuery" class="com.tecsoon.www.action.EchartsTest1_1Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest1_2Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest1_2Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest1_3Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest1_3Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest2_1Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest2_1Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest2_2Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest2_2Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest2_3Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest2_3Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest3_1Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest3_1Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest3_2Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest3_2Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest3_3Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest3_3Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest3_4Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest3_4Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="EchartsTest3_5Action_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.EchartsTest3_5Action" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+	<!-- 	<action name="JqueryAjaxActiion_ajaxJquery" class="com.tecsoon.www.action.JqueryAjaxAction" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action> -->
+			<!-- <action name="*_*" class="com.tecsoon.www.action.ajaxaction.{1}" method="{2}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action> -->
+		
+		
+		
+		<!-- <action name="ChangeEchartsAction_ajaxQuery" class="tecsoonecharts-change" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="NavigateTestAction_ajaxQuery" class="tecsoonecharts-navigate" method="ajaxQuery">
+		    <result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>--> 
+		
+		
+		<action name="suggestAction" class="com.tecsoon.www.action.SuggestAction">  
+	        </action> 
+	    <action name="randomAction1" class="com.tecsoon.www.action.RandomAction1" method="execute">
+			<result type="json">
+			<param name="root">result</param>
+			</result>
+	    </action>
+	     <action name="randomAction" class="com.tecsoon.www.action.RandomAction" method="execute">  
+	     <result type="json">
+			<param name="root">result</param>
+			</result>
+	     </action>  
+	        <action name="CreateAjaxAction_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.CreateAjaxAction" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="CuessAjaxAction_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.GuessAjaxAction" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="CreateAjaxDBAction_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.CreateAjaxDBAction" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="CuessAjaxDBAction_ajaxQuery" class="com.tecsoon.www.action.ajaxaction.GuessAjaxDBAction" method="ajaxQuery">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="QueryAjaxAction" class="com.tecsoon.www.action.ajaxaction.QueryAjaxAction" method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="TestAction" class="com.tecsoon.www.action.ajaxaction.TestAction" method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="TestAction2" class="com.tecsoon.www.action.ajaxaction.TestAction2" method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<!-- 返回JSON类型数据 -->
+		<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+		
+	<action name="echartsAction" class="com.tecsoon.www.action.ajaxaction.EchartsAction" method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+    </package>
+</struts>

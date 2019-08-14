@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery/jquery-3.2.1.js">
+
+</script>
+</head>
+<body>
+ <input id="inputID"  type="button" value="点我" onclick="alert">
+ <div id="divID">哈哈哈</div>
+ <script>
+ var input = document.getElementByyId("inputID");
+  var div = document.getElementByyId("divID");
+  var $input =$("#inputID");
+ // alert($input.val);
+  
+  var $div =$("#divID");
+ // alert($input.html);
+ /*  var d2j = $(input);
+ // alert(d2j.val());
+  var j2d = $input[0];
+  var j2d = $input.get(0); */
+  //(j2d.value);
+ /*  $input.click(function){
+	  alert(111);
+  });
+  $input.on("click",(function){
+	  alert(111);
+  });
+  $input.bind("click",function){
+	  alert(111);
+  });
+  $input.one("click",function){
+	  alert(111);
+  }); */
+  $("#inputID").on("click",function){
+	  alert(333);
+  });
+ </script>
+</body>
+</html>

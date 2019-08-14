@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.multipart.maxSize" value="10000000" />
+	<!-- 排除DWR的请求的拦截 -->
+	<!-- <constant name="struts.action.excludePattern" value="/dwr/.*,/dwr/test/.*"></constant> -->
+
+    <!-- 主题，将值设置为simple，即不使用UI模板。这将不会生成额外的html标签 -->
+    <constant name="struts.ui.theme" value="css_xhtml" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+    <!-- 编码格式 -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    
+    <!-- 读取properties配置文件 -->
+    <!-- <constant name="struts.custom.i18n.resources" value="custom_exception" /> -->
+    
+       <!--  该属性指定Struts2应用加载用户自定义的属性文件，该自定义属性文件指定的属性不会覆盖   
+	        struts.properties文件中指定的属性。如果需要加载多个自定义属性文件，多个自定义属性文   
+	        件的文件名以英文逗号（,）隔开。(也就是说不要改写struts.properties!)   
+	    -->
+    <!-- <constant name="struts.custom.properties" value="ApplicationCHResources" /> -->
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	
+	<package name="tecsoonPkg" namespace="/ts" extends="json-default,struts-default">
+		<!--注册自定义异常拦截器-->
+		<interceptors>
+			<interceptor name="businessInterceptor"
+				class="com.tecsoon.www.interceptor.BusinessInterceptor" />
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="businessInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 设置默认拦截器栈 -->
+		<default-interceptor-ref name="mystack" />
+
+		<!-- 设置默认action -->
+		<default-action-ref name="LoginAction"/>
+		
+		<!-- 全局跳转页面 -->
+		<global-results>
+			<result name="exceptions">/jsp/error.jsp</result>
+		</global-results>
+
+		<!-- 全局异常 -->
+		<global-exception-mappings>
+			<exception-mapping result="exceptions" exception="java.lang.Exception" />
+		</global-exception-mappings>
+		
+	</package>
+
+	<!-- 引入它功能模块struts文件 -->
+	<include file="*-ChildStruts.xml" />
+
+</struts>

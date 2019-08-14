@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- <input type="button" id="btn" value="登录" onclick="alert(1111)"> -->
+<!-- <input type="text" id="txid"> -->
+<!-- <div id="divId"></div> -->
+<!-- <tabe id="td"> -->
+<!-- 	<tr> -->
+<!-- 	  <td></td> -->
+<!-- 	</tr> -->
+<!-- </tabe> -->
+<script>
+Math.seed = 5;   
+Math.seededRandom = function(max, min) {   
+    max = max || 1;  
+    min = min || 0;   
+    Math.seed = (Math.seed * 9301 + 49297) % 233280;   
+    var rnd = Math.seed / 233280.0;  
+    return min + rnd * (max - min); 
+};  
+for (var i= 0; i<10; i++) {  
+     console.log(Math.seededRandom());  
+     
+}  
+// var num = Math.seededRandom;   
+// alert(num); 
+// var input= document.getElementById("btn");
+// text.onblur=function(){
+// 	alert(111);
+// }
+//    alert(document.nodeValue);
+// var obj = document.getElementById("divId")；
+// alert(obj.nodeName)
+// var obj = document.getElementById("td")；
+// alert(obj.childNodes)
+</script>
+</body>
+</html>

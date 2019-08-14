@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tecsoon.www.dao">
+
+
+	<select id="TECSOON_LOGIN" parameterType="userEntity" resultType="userEntity">
+		select * from sys_user 
+		where user_nm = #{user_nm}
+		    and password = #{password}
+	</select>
+	
+	<select id="TECSOON_LOGIN_ALL" resultType="userEntity">
+		select * from sys_user where user_nm=#{user_nm}
+	</select>
+	
+	<select id="TECSOON_LOGIN_ALL2" parameterType="String" resultType="userEntity"> 
+		select * from sys_user where user_nm=#{user_nm}
+	</select>
+
+<select id="" parameterType="String" resultType="userEntity"> 
+		select * from sys_user where user_nm=#{user_nm}
+	</select>
+
+<select id="MY_SQL_ID" parameterType="java.util.Map" resultType="userEntity">
+		select * from sys_user where user_nm=#{user_nm} and password=#{password}
+	</select>
+	
+	
+	<insert id="insertNum" parameterType="randomEntity">  
+        INSERT INTO RANDOM (ranNum)  
+              VALUES   (#{Math.seededRandom()} 
+                          )  
+        <selectKey resultType="Integer" order="AFTER" keyProperty="randomEntity.ranNum">
+            SELECT * from random where ranNum=#{ranNum}
+        </selectKey>
+	</insert> 
+	
+	<select id="TECSOON_ARCH_ALL" parameterType="String" resultType="uviewEntity">
+	select * from arch_busi_uview where uview_nm=#{uview_nm}
+	</select>
+	
+	<select id="TECSOON_ARCH_CON"  parameterType="String" resultType="uviewEntity">
+	select * from arch_busi_uview where busidomn_id='N4kaYQSgEeeTDO9VtFp_ng'
+
+	</select>
+	
+	
+<select id="READ_RANDOM_SQL_ID" resultType="String">
+		select arch_busi_uview.uview_no from arch_busi_uview where arch_busi_uview.uview_id='random_numbers'
+	</select>
+<insert id="SAVE_RANDOM_SQL_ID" parameterType="java.util.Map">
+		insert into arch_busi_uview (uview_id, uview_no) values (#{uview_id},#{uview_no});
+	</insert>
+	
+	<update id="UPDATE_RANDOM_SQL_ID" parameterType="java.util.Map">
+		update arch_busi_uview set arch_busi_uview.uview_no=#{uview_no} where arch_busi_uview.uview_id='random_numbers'
+	</update>
+
+
+
+<select id="TECSOON_LOGIN_ALL3" parameterType="String" resultType="userEntity"> 
+		select * from sys_user where user_nm=#{user_nm}
+	</select>
+
+	<select id="TECSOON_DIAGRAM_COUNT" resultType="diagramEntity">
+		SELECT TOP 13 NAME AS DIAGRAMNAME, STEREOTYPE AS DIAGRAMTYPE, COUNT(*) AS NUMS FROM T_OBJECT GROUP BY NAME,STEREOTYPE ORDER BY NUMS DESC;
+	</select>
+	
+	<select id="TECSOON_CONNECTOR_COUNT" resultType="connectorEntity">
+	    SELECT CONNECTOR_TYPE AS CONNNAME ,STEREOTYPE AS CONNTYPE ,COUNT(*) AS NUMS FROM T_CONNECTOR GROUP BY CONNECTOR_TYPE, STEREOTYPE ORDER BY NUMS DESC;
+	</select>
+	
+	<select id="TECSOON_OBJECT_NAVIGATE_ALL" resultType="navigateEntity">
+	    SELECT OBJECT_TYPE AS OBJECTYPE,COUNT(*) AS NUMS FROM T_OBJECT GROUP BY OBJECT_TYPE ORDER BY NUMS DESC;
+	</select>
+	
+	<select id="TECSOON_OBJECT_NAVIGATE_SUB" resultType="navigateEntity">
+	    SELECT TOP 4 OBJECT_TYPE AS OBJECTYPE,COUNT(*) AS NUMS FROM T_OBJECT GROUP BY OBJECT_TYPE ORDER BY NUMS DESC;
+	</select>
+	
+	<select id="SELECT_CHART_SETTING_INFO" parameterType="java.lang.String" resultType="chartSettingEntity">
+	    SELECT 
+	       TEMPLATEID
+	      ,USERID
+	      ,CHART_TYPE1 AS CHARTTYPE1
+	      ,CHART_TYPE2 AS CHARTTYPE2
+	      ,CHART_TYPE3 AS CHARTTYPE3
+	      ,CHART_TYPE4 AS CHARTTYPE4
+	      ,CHART_TYPE5 AS CHARTTYPE5
+	      ,CHART_TITLE1 AS CHARTTITLE1
+	      ,CHART_TITLE2 AS CHARTTITLE2
+	      ,CHART_TITLE3 AS CHARTTITLE3
+	      ,CHART_TITLE4 AS CHARTTITLE4
+	      ,CHART_TITLE5 AS CHARTTITLE5
+	      ,DATASOURCETYPE1 AS DATASOURCETYPE1
+	      ,DATASOURCETYPE2 AS DATASOURCETYPE2
+	      ,DATASOURCETYPE3 AS DATASOURCETYPE3
+	      ,DATASOURCETYPE4 AS DATASOURCETYPE4
+	      ,DATASOURCETYPE5 AS DATASOURCETYPE5
+	      ,CHART_COLOR1 AS CHARTCOLOR1
+	      ,CHART_COLOR2 AS CHARTCOLOR2
+	      ,CHART_COLOR3 AS CHARTCOLOR3
+	      ,CHART_COLOR4 AS CHARTCOLOR4
+	      ,CHART_COLOR5 AS CHARTCOLOR5
+	  FROM CHART_SETTING
+	  WHERE USERID = #{USERID}
+	  <!-- AND TEMPLATEID = #{TEMPLATEID}; -->
+	</select>
+	
+	<insert id="SAVE_CHART_SETTING_INFO" parameterType="chartSettingParam">
+	INSERT INTO CHART_SETTING
+           (TEMPLATEID
+           ,CHART_TYPE
+           ,USERID
+           ,CHART_TITLE
+           ,CHART_COLOR
+           ,DATASOURCETYPE)
+     VALUES
+           (#{TEMPLATEID}
+           ,#{CHART_TYPE}
+           ,{#{USERID}
+           ,{#{CHART_TITLE}
+           ,{#{CHART_COLOR}
+           ,{#{DATASOURCETYPE})
+	</insert>
+</mapper>
